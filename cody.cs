@@ -600,11 +600,10 @@ public class NpcScript : IScriptV2
 		
 		if (MapID == 100000110)
 			options.Add((90003, " Join the event!\r\n"));
-		options.Add((90000, " Generate item"));
-		options.Add((90002, " Teleport to map"));
 		
 		if (chr.IsGM) {
-			
+			options.Add((90000, " Generate item"));
+			options.Add((90002, " Teleport to map"));
 			options.Add((90001, "Add me to FM (do only once!)"));
 		}
 		
