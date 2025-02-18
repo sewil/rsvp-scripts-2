@@ -1372,24 +1372,24 @@ public class NpcScript : IScriptV2
 			string medium1 = GetQuestData(8020041);
 			string hard1 = GetQuestData(8020044);
 			
-			if (IsEventDate("summer2025") && ((Level < 26 && info == "" && medium1 == "" && hard1 == "") || (info != "" && info != "e")))
+			if (eventActive("summer2025") && ((Level < 26 && info == "" && medium1 == "" && hard1 == "") || (info != "" && info != "e")))
 				return " Beat the Heat - 1st Stage";
 		}
 		else if (quest == 8020039)
 		{
 			string easy1 = GetQuestData(8020038);
 			
-			if (IsEventDate("summer2025") && easy1 == "e" && info != "e")
+			if (eventActive("summer2025") && easy1 == "e" && info != "e")
 				return " Beat the Heat - 2nd Stage";
 		}
 		else if (quest == 8020040)
 		{
 			string easy2 = GetQuestData(8020039);
 			
-			if (IsEventDate("summer2025") && easy2 == "e" && info != "e")
+			if (eventActive("summer2025") && easy2 == "e" && info != "e")
 				return " Beat the Heat - 3rd Stage";
 			
-			if (IsEventDate("summer2025") && info == "e")
+			if (eventActive("summer2025") && info == "e")
 				return " Upgrading the Ice Pop";
 		}
 		else if (quest == 8020041)
@@ -1397,24 +1397,24 @@ public class NpcScript : IScriptV2
 			string easy1 = GetQuestData(8020038);
 			string hard1 = GetQuestData(8020044);
 			
-			if (IsEventDate("summer2025") && ((Level >= 26 && Level < 46 && info == "" && easy1 == "" && hard1 == "") || (info != "" && info != "e")))
+			if (eventActive("summer2025") && ((Level >= 26 && Level < 46 && info == "" && easy1 == "" && hard1 == "") || (info != "" && info != "e")))
 				return " Beat the Heat - 1st Stage";
 		}
 		else if (quest == 8020042)
 		{
 			string medium1 = GetQuestData(8020041);
 			
-			if (IsEventDate("summer2025") && medium1 == "e" && info != "e")
+			if (eventActive("summer2025") && medium1 == "e" && info != "e")
 				return " Beat the Heat - 2nd Stage";
 		}
 		else if (quest == 8020043)
 		{
 			string medium2 = GetQuestData(8020042);
 			
-			if (IsEventDate("summer2025") && medium2 == "e" && info != "e")
+			if (eventActive("summer2025") && medium2 == "e" && info != "e")
 				return " Beat the Heat - 3rd Stage";
 			
-			if (IsEventDate("summer2025") && info == "e")
+			if (eventActive("summer2025") && info == "e")
 				return " Upgrading the Ice Pop";
 		}
 		else if (quest == 8020044)
@@ -1422,24 +1422,24 @@ public class NpcScript : IScriptV2
 			string easy1 = GetQuestData(8020038);
 			string medium1 = GetQuestData(8020041);
 			
-			if (IsEventDate("summer2025") && ((Level >= 46 && info == "" && easy1 == "" && medium1 == "") || (info != "" && info != "e")))
+			if (eventActive("summer2025") && ((Level >= 46 && info == "" && easy1 == "" && medium1 == "") || (info != "" && info != "e")))
 				return " Beat the Heat - 1st Stage";
 		}
 		else if (quest == 8020045)
 		{
 			string hard1 = GetQuestData(8020044);
 			
-			if (IsEventDate("summer2025") && hard1 == "e" && info != "e")
+			if (eventActive("summer2025") && hard1 == "e" && info != "e")
 				return " Beat the Heat - 2nd Stage";
 		}
 		else if (quest == 8020046)
 		{
 			string hard2 = GetQuestData(8020045);
 			
-			if (IsEventDate("summer2025") && hard2 == "e" && info != "e")
+			if (eventActive("summer2025") && hard2 == "e" && info != "e")
 				return " Beat the Heat - 3rd Stage";
 			
-			if (IsEventDate("summer2025") && info == "e")
+			if (eventActive("summer2025") && info == "e")
 				return " Upgrading the Ice Pop";
 		}
 		return null;
