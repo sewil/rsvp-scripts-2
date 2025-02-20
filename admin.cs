@@ -80,6 +80,10 @@ public class NpcScript : IScriptV2
 		redcreds.Add(new RedeemableCredit(2.0, RateCredits.Type.EXP, TimeSpan.FromHours(2), "Downtime Compensation", 999198, DateTime.Parse("2022-12-01T00:00:00Z")));
 		redcreds.Add(new RedeemableCredit(2.0, RateCredits.Type.Mesos, TimeSpan.FromHours(2), "Downtime Compensation", 999199, DateTime.Parse("2022-12-01T00:00:00Z")));
 
+		// 1 day rollback
+		redcreds.Add(new RedeemableCredit(1.5, RateCredits.Type.Mesos, TimeSpan.FromHours(6), "Rollback Compensation", 999200, DateTime.Parse("2025-04-30T00:00:00Z")));
+		redcreds.Add(new RedeemableCredit(1.5, RateCredits.Type.EXP, TimeSpan.FromHours(6), "Rollback Compensation", 999201, DateTime.Parse("2025-04-30T00:00:00Z")));
+
 		// Add everything that is not yet activated
 		foreach (var redcred in redcreds.Where(x => DateTime.Now < x.EndDate && GetQuestData(x.QuestID) != "1"))
 		{
