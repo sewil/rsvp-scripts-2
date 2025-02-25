@@ -192,14 +192,16 @@ public class NpcScript : IScriptV2
 	{
 		bool checkYellow = Check(8020004);
 		bool checkGreen = Check(8020005);
+		var startDate = eventStart("easter");
+		var endDate = eventEnd("easter");
 		
-		if (DateTime.UtcNow < DateTime.Parse("2021-03-27"))
+		if (DateTime.UtcNow < startDate)
 		{
 			self.say("Quit buggin me. When Easter comes along, I'll have plenty for you to do...");
 			return;
 		}
 		
-		if (DateTime.UtcNow > DateTime.Parse("2021-04-17"))
+		if (DateTime.UtcNow > endDate)
 		{
 			self.say("Sup. Easter is over, but I still don't like it one bit, and now the people are aware of my plans. That's alright, though; my gang will do our best to bring it down next year, too. I'll be counting on you to help us take away more Easter Eggs from others. Peace...");
 			return;

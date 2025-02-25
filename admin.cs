@@ -464,7 +464,11 @@ public class NpcScript : IScriptV2
 	private void Easter(string quest)
 	{
 		string lastDate = GetQuestData(8021000);
-		string today = DateTime.UtcNow.ToString("yyyyMMdd");
+		var now = DateTime.UtcNow;
+		int year = now.Year;
+		var endDate = eventEnd("easter");
+		string expireDate = endDate.ToString("yyyyMMdd23");
+		string today = now.ToString("yyyyMMdd");
 		
 		if (lastDate == today)
 		{
@@ -482,7 +486,7 @@ public class NpcScript : IScriptV2
 			
 			self.say("Great job gathering up #b100 Tree Branches#k, #b100 Squishy Liquids#k, and #b1 Pig's Ribbon#k needed to make the #rEaster Basket#k. Now let me see here...");
 			
-			if (!ExchangeEx(0, "4000003", -100, "4000004", -100, "4000002", -1, "4031283,DateExpire:2025042423", 1))
+			if (!ExchangeEx(0, "4000003", -100, "4000004", -100, "4000002", -1, $"4031283,DateExpire:{expireDate}", 1))
 			{
 				self.say("Hmm... please leave an empty space in your etc. inventory and then talk to me again.");
 				return;
@@ -490,7 +494,7 @@ public class NpcScript : IScriptV2
 			
 			AddEXP(800);
 			SetQuestData(8020003, "end");
-			SetQuestData(8021000, DateTime.UtcNow.ToString("yyyyMMdd"));
+			SetQuestData(8021000, today);
 			QuestEndEffect();
 			self.say("Here's your #rEaster Basket#k! By the way, I hear that the Easter Bunny's nasty cousin is trying to ruin Easter this year. Avoid that rotten egg. He is a disgrace to the season~");
 		}
@@ -1353,7 +1357,7 @@ public class NpcScript : IScriptV2
 		}
 		else if (quest == 8020003)
 		{
-			if (eventActive("easter2025"))
+			if (eventActive("easter"))
 				return " Easter Basket";
 		}
 		else if (quest == 9000500)
