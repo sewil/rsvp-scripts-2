@@ -56,13 +56,13 @@ public class NpcScript : IScriptV2
 	
 	public override void Run()
 	{
-		if (!eventActive("fall2022") && !eventDone("fall2022"))
+		if (!eventActive("fall") && !eventDone("fall"))
 		{
 			self.say("It looks like the event hasn't started yet. Please come and see me again soon!");
 			return;
 		}
 		
-		if (eventDone("fall2022"))
+		if (eventDone("fall"))
 		{
 			self.say("Aw, it looks like autumn is finally over~ Oh well, comes back again soon and I'll have more goodies for you!");
 			return;
