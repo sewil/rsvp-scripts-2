@@ -8,7 +8,7 @@ public class NpcScript : IScriptV2
 {
     public override void Run()
     {
-		if (MapID == 902001100 || MapID == 902011300 || MapID == 902021300 || MapID == 904000000 || MapID == 904000000)
+		if (MapID == 904010000)
 		{
 			if (AskYesNo("Ready to go back to the #bInternet Cafe#k?"))
 			{
@@ -22,10 +22,7 @@ public class NpcScript : IScriptV2
 				
 				switch(MapID)
 				{
-					case 902001100: ChangeMap(103000007); break;
-					case 902011300: ChangeMap(103000007); break;
-					case 904000000: ChangeMap(103000007); break;
-					case 902021300: ChangeMap(220000309); break;
+					case 904010000: ChangeMap(220000309); break;
 				}
 			}
 		}
