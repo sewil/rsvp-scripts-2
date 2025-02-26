@@ -38,14 +38,19 @@ public class NpcScript : IScriptV2
 					self.say("You have already entered Premium Road two times today. Please come back tomorrow.");
 					return;
 				}
-				
-				SetQuestData(1001302, retryCount.ToString());
 			}
 			else
 			{
-				SetQuestData(1001302, "1");
+				retryCount = 1;
 			}
-			
+
+			if (!Exchange(0, 4030017, -1))
+			{
+				self.say("I'm sorry, but without a #b#t4030017##k (#i4030017#), I cannot let you in. Please talk to me again when you have acquired a ticket.");
+				return;
+			}
+
+			SetQuestData(1001302, retryCount.ToString());
 			SetQuestData(1001301, DateTime.UtcNow.ToString("yyyyMMdd"));
 			FieldSet.Enter(field, new Character[1]{chr}, chr);
 		}
@@ -72,7 +77,7 @@ public class NpcScript : IScriptV2
 				if (GetQuestData(partyMember, 1001301) == today)
 				{
 					string retry = GetQuestData(partyMember, 1001302, "0");
-                    
+
 					int retryCount = Int32.Parse(retry) + 1;
 					
 					if (retryCount > 2)
@@ -82,7 +87,13 @@ public class NpcScript : IScriptV2
 					}
 				}
 			}
-			
+
+			if (!Exchange(0, 4030017, -1))
+			{
+				self.say("I'm sorry, but without a #b#t4030017##k (#i4030017#), I cannot let you in. Please talk to me again when you have acquired a ticket.");
+				return;
+			}
+
 			foreach (var partyMember in partyMembers)
 			{
 				string date = GetQuestData(partyMember, 1001301);
