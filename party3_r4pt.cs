@@ -8,7 +8,7 @@ public class Portal : IScriptV2
 	public override void Run()
 	{
 		var rnd = new Random();
-		if (GetFieldsetVar("Party5", "room4_portals") != "set")
+		if (GetFieldsetVar("room4_portals") != "set")
 		{
 			FieldSet.SetVar("r4way0", rnd.Next(0, 3).ToString());
 			FieldSet.SetVar("r4way1", rnd.Next(0, 3).ToString());
@@ -21,7 +21,7 @@ public class Portal : IScriptV2
 		{
 			if (GetPortalID() == 11 + i)
 			{
-				if (GetFieldsetVar("Party5", $"r4way{i / 3}") == $"{i % 3}")
+				if (GetFieldsetVar($"r4way{i / 3}") == $"{i % 3}")
 				{
 					ChangeMap(-1, $"np0{i / 3}");
 				}

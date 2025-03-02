@@ -10,7 +10,7 @@ public class Portal : IScriptV2
 	
 	public override void Run()
 	{
-		if (GetFieldsetVar("Party5", "stage4") == "clear")
+		if (GetFieldsetVar("stage4") == "clear")
 		{
 			Message("There is nothing left to do in this room.");
 			return;

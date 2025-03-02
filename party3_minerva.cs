@@ -126,7 +126,7 @@ public class NpcScript : IScriptV2
 			
 			GiveEXP(23000, 7);
 			
-			string mission = GetFieldsetVar("Party5", "cMission");
+			string mission = GetFieldsetVar("cMission");
 			
 			if (mission != null && mission != "0")
 			{

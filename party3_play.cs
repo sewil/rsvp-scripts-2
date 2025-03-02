@@ -404,7 +404,7 @@ public class NpcScript : IScriptV2
 		}
 		else if (stageRecord == "s")
 		{
-			if (GetFieldsetVar("Party5", "ans1") == null)
+			if (GetFieldsetVar("ans1") == null)
 			{
 				QuizAnswer();
 			}
@@ -421,16 +421,16 @@ public class NpcScript : IScriptV2
 			
 			int count = 0;
 			
-			if (area1 == int.Parse(GetFieldsetVar("Party5", "ans1")))
+			if (area1 == int.Parse(GetFieldsetVar("ans1")))
 				count++;
-			if (area2 == int.Parse(GetFieldsetVar("Party5", "ans2")))
+			if (area2 == int.Parse(GetFieldsetVar("ans2")))
 				count++;
-			if (area3 == int.Parse(GetFieldsetVar("Party5", "ans3")))
+			if (area3 == int.Parse(GetFieldsetVar("ans3")))
 				count++;
 			
 			if (count < 3)
 			{
-				int tries = int.Parse(GetFieldsetVar("Party5", "try")) + 1;
+				int tries = int.Parse(GetFieldsetVar("try")) + 1;
 				
 				FieldSet.SetVar("try", tries.ToString());
 				
@@ -552,11 +552,11 @@ public class NpcScript : IScriptV2
 		}
 		else if (stageRecord == "s")
 		{
-			int ans1  = 93 + int.Parse(GetFieldsetVar("Party5", "stage6_ans1"));
-			int ans2  = 93 + int.Parse(GetFieldsetVar("Party5", "stage6_ans2"));
-			int wans1 = 93 + int.Parse(GetFieldsetVar("Party5", "stage6_wans1"));
-			int wans2 = 93 + int.Parse(GetFieldsetVar("Party5", "stage6_wans2"));
-			int wans3 = 93 + int.Parse(GetFieldsetVar("Party5", "stage6_wans3"));
+			int ans1  = 93 + int.Parse(GetFieldsetVar("stage6_ans1"));
+			int ans2  = 93 + int.Parse(GetFieldsetVar("stage6_ans2"));
+			int wans1 = 93 + int.Parse(GetFieldsetVar("stage6_wans1"));
+			int wans2 = 93 + int.Parse(GetFieldsetVar("stage6_wans2"));
+			int wans3 = 93 + int.Parse(GetFieldsetVar("stage6_wans3"));
 			
 			self.say($"{ans1}  {ans2}  {wans1}  {wans2}  {wans3}");
 			
@@ -594,15 +594,15 @@ public class NpcScript : IScriptV2
 	{
 		switch(MapID)
 		{
-			case 920010000: PreStage(GetFieldsetVar("Party5", "prestage")); break;
-			case 920010100: Stage1(GetFieldsetVar("Party5", "stage1")); break;
-			case 920010200: Stage2(GetFieldsetVar("Party5", "stage2")); break;
-			case 920010300: Stage3(GetFieldsetVar("Party5", "stage3")); break;
-			case 920010400: Stage4(GetFieldsetVar("Party5", "stage4")); break;
-			case 920010500: Stage5(GetFieldsetVar("Party5", "stage5")); break;
-			case 920010600: Stage6(GetFieldsetVar("Party5", "stage6")); break;
-			case 920010700: Stage7(GetFieldsetVar("Party5", "stage7")); break;
-			case 920010800: StageBoss(GetFieldsetVar("Party5", "stageboss")); break;
+			case 920010000: PreStage(GetFieldsetVar("prestage")); break;
+			case 920010100: Stage1(GetFieldsetVar("stage1")); break;
+			case 920010200: Stage2(GetFieldsetVar("stage2")); break;
+			case 920010300: Stage3(GetFieldsetVar("stage3")); break;
+			case 920010400: Stage4(GetFieldsetVar("stage4")); break;
+			case 920010500: Stage5(GetFieldsetVar("stage5")); break;
+			case 920010600: Stage6(GetFieldsetVar("stage6")); break;
+			case 920010700: Stage7(GetFieldsetVar("stage7")); break;
+			case 920010800: StageBoss(GetFieldsetVar("stageboss")); break;
 			case 920010900: HelpText(); break;
 			case 920011000: HelpText(); break;
 			case 920011100: PartyExit(); break;

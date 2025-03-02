@@ -9,7 +9,7 @@ public class Portal : IScriptV2
 	{
 		var rnd = new Random();
 		
-		if (GetFieldsetVar("Party5", "room6_portals") != "set")
+		if (GetFieldsetVar("room6_portals") != "set")
 		{
 			for (int i = 0; i < 16; i++)
 			{
@@ -28,7 +28,7 @@ public class Portal : IScriptV2
 		{
 			if (GetPortalID() == 24 + i)
 			{
-				if (GetFieldsetVar("Party5", $"r6way{i / 4}") == $"{i % 4}")
+				if (GetFieldsetVar($"r6way{i / 4}") == $"{i % 4}")
 				{
 					ChangeMap(-1, $"{set1[i / 4]}");
 				}
