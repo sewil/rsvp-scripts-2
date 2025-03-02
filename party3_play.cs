@@ -376,7 +376,7 @@ public class NpcScript : IScriptV2
 		});
 		
 		GiveEXP(7500, 3);
-		SetReactorState(920010400, 4, 122, 1);
+		SetReactorState(920010400, 4, 123, 1);
 		FieldSet.SetVar("stage4", "clear");
 		self.say("Yes! This is the song! The Goddess loved to hear this song from time to time.");
 	}
