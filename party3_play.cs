@@ -210,7 +210,7 @@ public class NpcScript : IScriptV2
 		FieldSet.SetVar("prestage", "clear");
 		self.say("Thank you for raising my body. You're all here to rescue the Goddess Minerva, aren't you? I'll help as much as I can. All right, I'll take you to the tower entrance.");
 		
-		FieldSet.Characters.ForEach(character =>
+		FieldSet.Characters.ToList().ForEach(character =>
 		{
 			character.ChangeMap(920010000, "st00");
 		});
