@@ -22,8 +22,7 @@ public class Portal : IScriptV2
 			array[k] = array[n];
 			array[n] = value;
 		}
-
-		return array.ToString();
+		return new string(array);
 	}
 	
 	private void SetAnswer()
