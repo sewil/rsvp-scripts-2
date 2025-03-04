@@ -57,7 +57,7 @@ public class NpcScript : IScriptV2
 				return;
 			}
 			
-			self.say("I see that you have the #bEaster Basket#k and the #b10 Green Easter Eggs#k like I asked you to get. I?m sure it was a piece of cake for you to get all those.");
+			self.say("I see that you have the #bEaster Basket#k and the #b10 Green Easter Eggs#k like I asked you to get. I'm sure it was a piece of cake for you to get all those.");
 			
 			if (!ExchangeEx(0, "2022066", -10, "4031283", -1, "4120001,Period:129600", 1))
 			{
@@ -69,7 +69,7 @@ public class NpcScript : IScriptV2
 			SetQuestData(8020005, "end");
 			SetQuestData(8021001, DateTime.UtcNow.ToString("yyyyMMdd"));
 			QuestEndEffect();
-			self.say("My posse and I will be putting these to good use, if you know what I mean. Oh yeah? I always pay my debts on time. Talk to me later and we?ll do it again.");
+			self.say("My posse and I will be putting these to good use, if you know what I mean. Oh yeah? I always pay my debts on time. Talk to me later and we'll do it again.");
 		}
 		else
 		{
